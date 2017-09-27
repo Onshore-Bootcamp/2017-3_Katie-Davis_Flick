@@ -1,0 +1,66 @@
+﻿@model Capstone_FosterCharity.ViewModels.ItemVM
+@{
+    ViewBag.Title = "CreateItem";
+}
+<style>
+    .btn-success {
+        padding: 10px;
+        border-radius: 8px;
+    }
+</style>
+<h2 align="center">Donate Item</h2>
+
+@using (Html.BeginForm("CreateItem", "Item", FormMethod.Post))
+{
+    @Html.HiddenFor(model => Model.Item.UserID)
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => Model.Item.ItemName)
+                @Html.TextBoxFor(model => Model.Item.ItemName, new { @placeholder = "ItemName...", @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Item.ItemName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+   
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => Model.Item.Used)
+                @Html.DropDownListFor(model => Model.Item.Used, new SelectList(new[]
+                       { new {Value="False", Text="No"},
+                       new {Value="True", Text="Yes"},
+                        }, "Value", "Text", Model), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Item.Used, "", new { @class = "text-danger" })
+            </div>
+        </div>
+   
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => Model.Item.Description)
+                @Html.TextBoxFor(model => Model.Item.Description, new { @placeholder = "Description...", @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Item.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.ValidationMessageFor(model => model.Item, Model.ErrorMessage, new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5 " align="center">
+                <input class="btn btn-success" style="" type="submit" value="Submit" onclick="return confirm('Your item will be added to the list')" />
+            </div>
+        </div>
+
+        <div class="row" style="padding-top:10px">
+            <div class="col-md-12 " id="Difference" align="center">
+                <img src="~/images/makeadifference.jpg" />
+            </div>
+        </div>
+}
+
+

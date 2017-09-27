@@ -1,0 +1,10 @@
+C:\Users\Katie Davis\Documents\Visual Studio 2015\Projects\Capstone_FosterCharity\Capstone_CharityDAL\bin\Debug\Capstone_CharityDAL.dll
+C:\Users\Katie Davis\Documents\Visual Studio 2015\Projects\Capstone_FosterCharity\Capstone_CharityDAL\bin\Debug\Capstone_CharityDAL.pdb
+C:\Users\Katie Davis\Documents\Visual Studio 2015\Projects\Capstone_FosterCharity\Capstone_CharityDAL\obj\Debug\Capstone_CharityDAL.dll
+C:\Users\Katie Davis\Documents\Visual Studio 2015\Projects\Capstone_FosterCharity\Capstone_CharityDAL\obj\Debug\Capstone_CharityDAL.pdb
+C:\Users\Katie Davis\Documents\Visual Studio 2015\Projects\Capstone_FosterCharity\Capstone_CharityDAL\obj\Debug\Capstone_CharityDAL.csprojResolveAssemblyReference.cache
+C:\Users\Katie Davis\Desktop\FinalCapstone_FosterCharity (2)\Capstone_FosterCharity\Capstone_CharityDAL\bin\Debug\Capstone_CharityDAL.dll
+C:\Users\Katie Davis\Desktop\FinalCapstone_FosterCharity (2)\Capstone_FosterCharity\Capstone_CharityDAL\bin\Debug\Capstone_CharityDAL.pdb
+C:\Users\Katie Davis\Desktop\FinalCapstone_FosterCharity (2)\Capstone_FosterCharity\Capstone_CharityDAL\obj\Debug\Capstone_CharityDAL.csprojResolveAssemblyReference.cache
+C:\Users\Katie Davis\Desktop\FinalCapstone_FosterCharity (2)\Capstone_FosterCharity\Capstone_CharityDAL\obj\Debug\Capstone_CharityDAL.dll
+C:\Users\Katie Davis\Desktop\FinalCapstone_FosterCharity (2)\Capstone_FosterCharity\Capstone_CharityDAL\obj\Debug\Capstone_CharityDAL.pdb

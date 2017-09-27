@@ -1,0 +1,2 @@
+The DELETE statement conflicted with the REFERENCE constraint "FK_Donation_User". The conflict occurred in database "FosterCharity", table "dbo.Donation", column 'UserID'.
+The statement has been terminated.

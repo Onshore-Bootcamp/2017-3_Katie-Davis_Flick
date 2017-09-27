@@ -1,0 +1,48 @@
+﻿#UserList, #ItemList1, #ItemList2,#DonationList,#DonationList2 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size:16px;
+}
+
+table > tbody > tr:nth-child(odd) > td,
+table > tbody > tr:nth-child(odd) > th {
+    background-color: rgba(244,199,161, 0.4);
+}
+
+.btn-Create {
+    background-color: #7EC4CF;
+}
+
+.btn-Update {
+    background-color: #22AED1;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.btn-Delete {
+    background-color: #F96F5D;
+    padding: 5px;
+    border-radius: 8px;
+}
+.round.hollow.green {
+    color:#DC143C;
+    background-color: #FFF;    
+    -webkit-box-shadow: 0px 0px 0px 3px #42A129;
+    -moz-box-shadow: 0px 0px 0px 3px #42A129;
+    box-shadow: 0px 0px 0px 3px #DC143C;
+}
+.round.round-lg {
+    height: 35px;
+    width: 40px;
+    line-height: 40px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 1.5em;
+}
+
+

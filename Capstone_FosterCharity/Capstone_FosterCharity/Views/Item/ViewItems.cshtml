@@ -1,0 +1,70 @@
+﻿@using Capstone_FosterCharity.Models
+
+@model Capstone_FosterCharity.ViewModels.ItemVM
+
+@{
+    ViewBag.Title = "ViewItems";
+}
+
+<link href="~/Content/ViewTables.css" rel="stylesheet" />
+
+@if (Session["Username"] == null)
+{
+
+}
+else
+{
+    <h2 align="center">Avaliable Items</h2>
+
+    @Html.ActionLink("Donate an Item", "CreateItem", "Item", null, new { @class = "btn btn-Create", @style = "color:white" })
+
+    <table class="table" id="ItemList1">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Used</th>
+                <th>Description</th>
+                @if ((Int16)Session["Role"] != 1)
+                {
+
+                }
+                else
+                {
+                    <th>Change</th>
+                    <th>Remove</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ItemPO item in Model.ItemList)
+            {
+                <tr>
+                    <td>@item.ItemName</td>
+                    <td>@item.Used</td>
+                    <td>@item.Description</td>
+                    @if ((Int16)Session["Role"] != 1)
+                    {
+
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.ActionLink("Update", "UpdateItem", "Item", new { ItemID = item.ItemID }, new { @class = "btn btn-Update", @style = "color:white" })
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="round round-lg hollow green" align="center">
+                                <a href="@Url.Action("DeleteItem", "Item", new { ItemID = item.ItemID})">
+                                    <span class="glyphicon glyphicon-trash" onclick="return confirm('Are you sure you want to delete?');"></span>
+                                </a>
+                            </div>
+                        </td>
+
+                        }
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            }
+
+
+

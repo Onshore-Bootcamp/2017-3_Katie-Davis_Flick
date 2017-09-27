@@ -1,0 +1,47 @@
+﻿@using Capstone_FosterCharity.Models
+@model Capstone_FosterCharity.ViewModels.DonationVM
+@{
+    ViewBag.Title = "ViewDonations";
+}
+
+<link href="~/Content/ViewTables.css" rel="stylesheet" />
+
+<h2 align="center">Donations</h2>
+
+@Html.ActionLink("Make a Donation", "CreateDonations", "Donation", null, new { @class = "btn btn-Create", @style = "color:white" })
+
+<table class="table" id="DonationList">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>CardNumber</th>
+            <th>Rendered</th>
+            <th>Change</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DonationPO donation in Model.DonationList)
+        {
+            <tr>
+
+                <td>@Html.DisplayFor(model => donation.Amount)</td>
+                <td>@Html.DisplayFor(model =>donation.CardNumber)</td>
+                <td>@donation.Rendered</td>
+
+                <td>
+                    @Html.ActionLink("Update", "UpdateDonation", "Donation", new { DonationID = donation.DonationID },new { @class = "btn btn-Update", @style = "color:white" })
+                </td>
+                <td class="col-sm-1">
+                    <div class="round round-lg hollow green" align="center">
+                        <a href="@Url.Action("DeleteDonation", "Donation", new { DonationID = donation.DonationID})">
+                            <span class="glyphicon glyphicon-trash"onclick="return confirm('Are you sure you want to delete?');"></span>
+                        </a>
+                    </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

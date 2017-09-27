@@ -1,0 +1,36 @@
+﻿h2{
+    font-family: 'Amatic SC', cursive;
+    font-size:90px;
+}
+
+.slider {
+    width: 1000px;
+    margin: 2em auto;
+}
+
+.slider-wrapper {
+    width: 55%;
+    height: 200px;
+    position: relative;
+}
+
+.slide {
+    float: left;
+    position: absolute;
+    width: 130%;
+    height: 120%;
+    opacity: 0;
+    transition: opacity 3s linear;
+}
+
+.slider-wrapper > .slide:first-child {
+    opacity: 1;
+}
+
+.jumbotron {
+    height: 500px;
+    width: 80%;
+    position: relative;
+    left: 125px;
+}
+

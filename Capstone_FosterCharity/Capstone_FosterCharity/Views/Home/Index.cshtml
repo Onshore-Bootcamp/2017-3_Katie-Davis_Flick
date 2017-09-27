@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+
+    <link href="~/Content/HomeSlideshow.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <h2 align="center">Foster Love is Caring & Kindness</h2>
+
+    <div class="slider" id="main-slider">
+        <!-- outermost container element -->
+        <div class="slider-wrapper">
+
+            <!-- innermost wrapper element -->
+            <img src="~/images/foster-kids.gif" class="slide" /><!-- slides -->
+            <img src="~/images/foster care banner.png" class="slide" />
+            <img src="~/images/foster-kids2.jpg" class="slide" />
+            <img src="~/images/tx_banner_4.jpg" class="slide" />
+            <script src="~/Scripts/JavaScript-Slideshow.js"></script>
+        </div>
+    </div>
+
+
+    <p class="lead">FliCK is a free Web site that helps children in need.</p>
+</div>
+@if (Session["Username"] == null)
+{
+    <h3 align="left"> @Html.ActionLink("Register", "Register", "User") &raquo;</h3>
+
+    <h3 align="center">Register & Donate Today!!</h3>
+
+    <h4 align="center">@ViewBag.AverageDonation.ToString("$#,##0.00")</h4>
+    <h5 align="center">Average Donation</h5>
+
+    <h3 align="right"> @Html.ActionLink("Statistics", "Statistics", "Home") &raquo;</h3>
+}
+else
+{
+    <h3 align="center">Register & Donate Today!!</h3>
+
+    <h4 align="center">@ViewBag.AverageDonation.ToString("$#,##0.00")</h4>
+    <h5 align="center">Average Donation</h5>
+
+    <h3 align="right"> @Html.ActionLink("Statistics", "Statistics", "Home") &raquo;</h3>
+
+
+
+
+}
+
+
+

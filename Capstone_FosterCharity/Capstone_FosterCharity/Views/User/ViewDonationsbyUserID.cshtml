@@ -1,0 +1,84 @@
+﻿@using Capstone_FosterCharity.Models
+
+@model Capstone_FosterCharity.ViewModels.DonationVM
+
+@{
+    ViewBag.Title = "ViewDonationsbyUserID";
+}
+
+<link href="~/Content/ViewTables.css" rel="stylesheet" />
+
+@if ((Int16)Session["Role"] != 1)
+{
+    <h2 align="center">My Donations</h2>
+
+    @Html.ActionLink("Make a Donation", "CreateDonations", "Donation", null, new { @class = "btn btn-Create", @style = "color:white" })
+
+    <table class="table" id="DonationList2">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>CardNumber</th>
+                <th>Rendered</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DonationPO donation in Model.DonationList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => donation.Amount)</td>
+                    <td>@Html.DisplayFor(model => donation.CardNumber)</td>
+                    <td>@donation.Rendered</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3 class="col-md-4 col-md-offset-5">**Reminder**</h3>
+    <h5 class="col-md-4 col-md-offset-5">
+        Your donation will be rendered false until it has been processed.
+    </h5>
+
+
+}
+else
+{
+    <h2 align="center">My Donations</h2>
+
+    @Html.ActionLink("Make a Donation", "CreateDonations", "Donation", null, new { @class = "btn btn-Create", @style = "color:white" })
+
+
+    <table class="table" id="DonationList2">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>CardNumber</th>
+                <th>Rendered</th>
+                <th>Change</th>
+                <th>Remove</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DonationPO donation in Model.DonationList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => donation.Amount)</td>
+                    <td>@Html.DisplayFor(model => donation.CardNumber)</td>
+                    <td>@donation.Rendered</td>
+                    <td>
+                        @Html.ActionLink("Update", "UpdateDonation", "Donation", new { DonationID = donation.DonationID }, new { @class = "btn btn-Update", @style = "color:white" })
+                    </td>
+                    <td class="col-sm-1">
+                        <div class="round round-lg hollow green" align="center">
+                            <a href="@Url.Action("DeleteDonation", "Donation", new {DonationId = donation.DonationID})">
+                                <span class="glyphicon glyphicon-trash" onclick="return confirm('Are you sure you want to delete?');"></span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

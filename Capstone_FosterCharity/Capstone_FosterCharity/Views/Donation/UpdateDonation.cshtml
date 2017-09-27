@@ -1,0 +1,43 @@
+﻿@model Capstone_FosterCharity.ViewModels.DonationVM
+@{
+    ViewBag.Title = "UpdateDonation";
+}
+
+<h2 align="center">Update Donation</h2>
+
+@using (Html.BeginForm("UpdateDonation", "Donation", FormMethod.Post))
+{
+    @Html.HiddenFor(model => Model.Donation.DonationID)
+    @Html.HiddenFor(model => Model.Donation.UserID)
+    <div class="col-lg-4">
+        <img src="~/images/ShowImage.jpg" />
+    </div>
+
+    <div class="col-lg-4">
+        <div class="form-group" align="center">
+            @Html.LabelFor(model => Model.Donation.Amount)
+            @Html.TextBoxFor(model => Model.Donation.Amount, new { @placeholder = "Amount...", @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.Donation.Amount, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group" align="center">
+            @Html.LabelFor(model => Model.Donation.CardNumber)
+            @Html.TextBoxFor(model => Model.Donation.CardNumber, new { @placeholder = "Card Number...", @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.Donation.CardNumber, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group" align="center">
+            @Html.LabelFor(model => Model.Donation.Rendered)
+            @Html.CheckBoxFor(model => Model.Donation.Rendered, new { @placeholder = "True/False...", @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.Donation.Rendered, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group" align="center">
+            @Html.ValidationMessageFor(model => model.Donation, Model.ErrorMessage, new { @class = "text-danger" })
+        </div>
+       
+        <div class="form-group" align="center">
+            <input class="btn btn-success" type="submit" value="Update"  />
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <img src="~/images/foster-kids.gif" height="100%" width="100%"/>
+    </div>
+}

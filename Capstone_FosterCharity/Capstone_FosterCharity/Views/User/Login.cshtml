@@ -1,0 +1,40 @@
+﻿@model Capstone_FosterCharity.ViewModels.LoginVM
+@{
+    ViewBag.Title = "Login";
+}
+<link href="~/Content/Login.css" rel="stylesheet" />
+
+<h2 align="center">Login</h2>
+
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    <style type="text/css">
+        .form-horizontal {
+            padding-top: 85px;
+            padding-left: 430px;
+        }
+    </style>
+    <div class="form-contianer">
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => Model.User.Username)
+                @Html.TextBoxFor(model => Model.User.Username)
+                @Html.ValidationMessageFor(model => Model.User.Username, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => Model.User.Password)
+                @Html.PasswordFor(model => Model.User.Password)    @*Can't see password when typed*@
+                @Html.ValidationMessageFor(model => Model.User.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @if (Model != null)
+                {
+                    @Html.ValidationMessageFor(model => Model.User, Model.ErrorMessage, new { @class = "text-danger" })
+                }
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" />
+            </div>
+        </div>
+    </div>
+}

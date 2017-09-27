@@ -1,0 +1,33 @@
+﻿h2{
+    font-family: 'Amatic SC', cursive;
+    font-size:90px;
+}
+
+.slider {
+    width: 1000px;
+    margin: 6em auto;
+    padding:inherit
+}
+
+.slider-wrapper {
+    
+    width: 80%;
+    height: 400px;
+    position: relative;
+}
+
+.slide {
+    float: right;
+    position: absolute;
+    width: 130%;
+    height: 120%;
+    opacity: 30;
+    transition: opacity 3s linear;
+}
+
+.slider-wrapper > .slide:first-child {
+    opacity: 1;
+}
+
+
+
